@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="1010" viewBox="0 0 980 1010" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <title>Arquitectura del laboratorio Honeypot-AI-Analysis</title>
+  <desc>Servidor de sensores con IP publica, tunel WireGuard, equipo de recoleccion y equipo de analisis en red domestica privada, control previo a publicar y productos.</desc>
+
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#44505c"/>
+    </marker>
+  </defs>
+
+  <rect width="980" height="1010" fill="#ffffff"/>
+
+  <text x="36" y="42" font-size="22" font-weight="600" fill="#17202a">Honeypot-AI-Analysis</text>
+  <text x="36" y="65" font-size="13.5" fill="#5a6672">Arquitectura por zonas de confianza. Las direcciones y los nombres de host no se publican por diseño.</text>
+
+  <!-- Internet -->
+  <rect x="356" y="88" width="268" height="44" rx="8" fill="#fae8ec" stroke="#9b1d3a" stroke-width="1.5"/>
+  <text x="490" y="116" font-size="15" font-weight="600" fill="#7d172f" text-anchor="middle">Atacantes de internet</text>
+  <line x1="490" y1="132" x2="490" y2="158" stroke="#44505c" stroke-width="1.6" marker-end="url(#f)"/>
+
+  <!-- Zona 1: VPS -->
+  <rect x="36" y="162" width="908" height="282" rx="12" fill="#fdf6f7" stroke="#9b1d3a" stroke-width="1.6" stroke-dasharray="7 5"/>
+  <text x="56" y="188" font-size="15" font-weight="600" fill="#7d172f">Servidor de sensores · IP pública · expuesto a internet · 24/7</text>
+  <text x="56" y="208" font-size="12.5" fill="#8a5560">Perfil: agencia de marketing y desarrollo web. Se asume comprometible.</text>
+
+  <rect x="56" y="222" width="200" height="60" rx="8" fill="#ffffff" stroke="#d6a3ae"/>
+  <text x="156" y="245" font-size="14" font-weight="600" fill="#17202a" text-anchor="middle">Cowrie</text>
+  <text x="156" y="265" font-size="12" fill="#5a6672" text-anchor="middle">SSH y Telnet</text>
+
+  <rect x="272" y="222" width="200" height="60" rx="8" fill="#ffffff" stroke="#d6a3ae"/>
+  <text x="372" y="245" font-size="14" font-weight="600" fill="#17202a" text-anchor="middle">Web</text>
+  <text x="372" y="265" font-size="12" fill="#5a6672" text-anchor="middle">CMS simulado</text>
+
+  <rect x="488" y="222" width="200" height="60" rx="8" fill="#ffffff" stroke="#d6a3ae"/>
+  <text x="588" y="245" font-size="14" font-weight="600" fill="#17202a" text-anchor="middle">Dionaea</text>
+  <text x="588" y="265" font-size="12" fill="#5a6672" text-anchor="middle">FTP y MySQL</text>
+
+  <rect x="704" y="222" width="220" height="60" rx="8" fill="#ffffff" stroke="#d6a3ae"/>
+  <text x="814" y="245" font-size="14" font-weight="600" fill="#17202a" text-anchor="middle">Redis</text>
+  <text x="814" y="265" font-size="12" fill="#5a6672" text-anchor="middle">caché expuesta</text>
+
+  <rect x="56" y="294" width="332" height="60" rx="8" fill="#ffffff" stroke="#d6a3ae"/>
+  <text x="222" y="317" font-size="14" font-weight="600" fill="#17202a" text-anchor="middle">Honeytokens y Canarytokens</text>
+  <text x="222" y="337" font-size="12" fill="#5a6672" text-anchor="middle">reutilización de credenciales · exfiltración</text>
+
+  <rect x="404" y="294" width="520" height="60" rx="8" fill="#f6dde2" stroke="#9b1d3a"/>
+  <text x="664" y="317" font-size="14" font-weight="600" fill="#7d172f" text-anchor="middle">Honeywall · salida denegada por defecto</text>
+  <text x="664" y="337" font-size="12" fill="#8a5560" text-anchor="middle">descargas con límite · ataque a terceros bloqueado</text>
+
+  <rect x="56" y="366" width="868" height="58" rx="8" fill="#ffffff" stroke="#d6a3ae"/>
+  <text x="490" y="389" font-size="14" font-weight="600" fill="#17202a" text-anchor="middle">Agente de Wazuh · envío de eventos e integridad del propio servidor</text>
+  <text x="490" y="409" font-size="12" fill="#5a6672" text-anchor="middle">almacena en disco si el túnel cae · sin ejecución remota ni respuesta activa</text>
+
+  <!-- Tunel -->
+  <line x1="490" y1="444" x2="490" y2="488" stroke="#44505c" stroke-width="1.6" marker-end="url(#f)"/>
+  <text x="504" y="465" font-size="12.5" fill="#44505c">WireGuard iniciado desde la red doméstica · solo un puerto alcanzable</text>
+
+  <!-- Zona 2: recoleccion -->
+  <rect x="36" y="492" width="908" height="152" rx="12" fill="#f0f7f8" stroke="#0e5e6f" stroke-width="1.6" stroke-dasharray="7 5"/>
+  <text x="56" y="518" font-size="15" font-weight="600" fill="#0b4a57">Equipo de recolección · red doméstica, IP privada · 24/7</text>
+
+  <rect x="56" y="534" width="272" height="94" rx="8" fill="#ffffff" stroke="#8fc0c9"/>
+  <text x="192" y="558" font-size="14" font-weight="600" fill="#17202a" text-anchor="middle">Wazuh</text>
+  <text x="192" y="578" font-size="12" fill="#5a6672" text-anchor="middle">recepción y almacenamiento</text>
+  <text x="192" y="596" font-size="12" fill="#5a6672" text-anchor="middle">cola durable de eventos</text>
+
+  <rect x="344" y="534" width="272" height="94" rx="8" fill="#ffffff" stroke="#8fc0c9"/>
+  <text x="480" y="558" font-size="14" font-weight="600" fill="#17202a" text-anchor="middle">Vector</text>
+  <text x="480" y="578" font-size="12" fill="#5a6672" text-anchor="middle">normaliza y enruta los eventos</text>
+  <text x="480" y="596" font-size="12" fill="#5a6672" text-anchor="middle">buffer en disco · no se pierde nada</text>
+
+  <rect x="632" y="534" width="292" height="94" rx="8" fill="#ffffff" stroke="#8fc0c9"/>
+  <text x="778" y="558" font-size="14" font-weight="600" fill="#17202a" text-anchor="middle">n8n · pipeline determinista</text>
+  <text x="778" y="578" font-size="12" fill="#5a6672" text-anchor="middle">sesiones · agrupación · indicadores</text>
+  <text x="778" y="596" font-size="12" fill="#5a6672" text-anchor="middle">guardarraíles · cola por prioridad</text>
+
+  <line x1="490" y1="644" x2="490" y2="688" stroke="#44505c" stroke-width="1.6" marker-end="url(#f)"/>
+  <text x="504" y="670" font-size="12.5" fill="#44505c">cola priorizada · ventana diaria de análisis</text>
+
+  <!-- Zona 3: analisis -->
+  <rect x="36" y="692" width="908" height="140" rx="12" fill="#f1f0fa" stroke="#413c96" stroke-width="1.6" stroke-dasharray="7 5"/>
+  <text x="56" y="718" font-size="15" font-weight="600" fill="#332f78">Equipo de análisis · red doméstica, IP privada · modelo local, bajo demanda</text>
+
+  <rect x="56" y="734" width="206" height="80" rx="8" fill="#ffffff" stroke="#a7a2e0"/>
+  <text x="159" y="758" font-size="14" font-weight="600" fill="#17202a" text-anchor="middle">L1 · Triaje</text>
+  <text x="159" y="778" font-size="12" fill="#5a6672" text-anchor="middle">clasifica el caso</text>
+  <text x="159" y="796" font-size="12" fill="#5a6672" text-anchor="middle">y decide si escala</text>
+
+  <rect x="278" y="734" width="206" height="80" rx="8" fill="#ffffff" stroke="#a7a2e0"/>
+  <text x="381" y="758" font-size="14" font-weight="600" fill="#17202a" text-anchor="middle">L2 · Investigación</text>
+  <text x="381" y="778" font-size="12" fill="#5a6672" text-anchor="middle">técnicas MITRE ATT&amp;CK</text>
+  <text x="381" y="796" font-size="12" fill="#5a6672" text-anchor="middle">y artefactos</text>
+
+  <rect x="500" y="734" width="206" height="80" rx="8" fill="#ffffff" stroke="#a7a2e0"/>
+  <text x="603" y="758" font-size="14" font-weight="600" fill="#17202a" text-anchor="middle">L3 · Threat Hunting</text>
+  <text x="603" y="778" font-size="12" fill="#5a6672" text-anchor="middle">hipótesis sobre consultas</text>
+  <text x="603" y="796" font-size="12" fill="#5a6672" text-anchor="middle">predefinidas</text>
+
+  <rect x="722" y="734" width="202" height="80" rx="8" fill="#ffffff" stroke="#a7a2e0"/>
+  <text x="823" y="758" font-size="14" font-weight="600" fill="#17202a" text-anchor="middle">SOC Lead</text>
+  <text x="823" y="778" font-size="12" fill="#5a6672" text-anchor="middle">recomendación final</text>
+  <text x="823" y="796" font-size="12" fill="#5a6672" text-anchor="middle">nunca ejecuta acciones</text>
+
+  <line x1="490" y1="832" x2="490" y2="862" stroke="#44505c" stroke-width="1.6" marker-end="url(#f)"/>
+
+  <!-- Zona 4: control -->
+  <rect x="36" y="866" width="908" height="84" rx="12" fill="#f3f6e8" stroke="#56681a" stroke-width="1.6" stroke-dasharray="7 5"/>
+  <text x="56" y="890" font-size="15" font-weight="600" fill="#425014">Control antes de publicar</text>
+
+  <rect x="104" y="900" width="356" height="36" rx="8" fill="#ffffff" stroke="#a8b874"/>
+  <text x="282" y="923" font-size="12.5" fill="#17202a" text-anchor="middle">Validación automática · esquema, técnicas, CVE</text>
+
+  <rect x="520" y="900" width="320" height="36" rx="8" fill="#ffffff" stroke="#a8b874"/>
+  <text x="680" y="923" font-size="12.5" fill="#17202a" text-anchor="middle">Revisión humana · pull request</text>
+
+  <line x1="460" y1="918" x2="514" y2="918" stroke="#44505c" stroke-width="1.6" marker-end="url(#f)"/>
+
+  <text x="36" y="982" font-size="12.5" fill="#44505c">Productos publicados: informes de campaña · reglas Sigma con pruebas y capas de ATT&amp;CK Navigator · registro de threat hunting</text>
+  <text x="36" y="1000" font-size="11.5" fill="#7a848e">Rojo: zona expuesta a internet. Verde azulado y morado: red doméstica privada. Verde oliva: control previo a la publicación.</text>
+</svg>
