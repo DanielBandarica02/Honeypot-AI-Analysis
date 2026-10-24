@@ -30,4 +30,4 @@ completas con marca de tiempo por comando, y no solo los intentos de autenticaci
 |---|---|
 | [pirs.md](01-pirs.md) | Requisitos prioritarios de inteligencia |
 | [alcance.md](02-alcance.md) | Qué captura esta fuente, qué no, y con qué sesgos |
-| [politica-datos.md](03-politica-datos.md) | Retención, base legal y criterios de publicación |
+| [politica-datos.md](03-politica-de-datos.md) | Retención, base legal y criterios de publicación |
