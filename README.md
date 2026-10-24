@@ -116,7 +116,7 @@ dirección de un señuelo permite identificarlo, evitarlo o atacarlo de forma di
 
 ## Fases
 
-| Fase | Contenido | Documentación | Estado |
+| Fase | Contenido | Documentación |
 |---|---|---|---|
 | 0 | Gobierno, requisitos y modelo de amenazas | `docs/01-concepto/` | 
 | 1 | Laboratorio espejo e infraestructura base | `docs/02-arquitectura/` | 
