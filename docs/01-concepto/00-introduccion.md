@@ -28,6 +28,6 @@ completas con marca de tiempo por comando, y no solo los intentos de autenticaci
 
 | Documento | Contenido |
 |---|---|
-| [pirs.md](01-pirs.md) | Requisitos prioritarios de inteligencia |
-| [alcance.md](02-alcance.md) | Qué captura esta fuente, qué no, y con qué sesgos |
-| [politica-datos.md](03-politica-de-datos.md) | Retención, base legal y criterios de publicación |
+| [PIRS](01-pirs.md) | Requisitos prioritarios de inteligencia |
+| [Alcance](02-alcance.md) | Qué captura esta fuente, qué no, y con qué sesgos |
+| [Política de datos](03-politica-de-datos.md) | Retención, base legal y criterios de publicación |
