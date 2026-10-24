@@ -7,24 +7,21 @@
 > el threat hunting sin ejecutar ninguna acción. Como la entrada la escribe el adversario, el
 > propio agente se trata como superficie de ataque y se somete a pruebas adversarias continuas.
 
-![Arquitectura](docs/02-arquitectura/arquitectura.svg)
-
 *An internet-facing honeypot lab that turns real opportunistic attacker activity into threat
 intelligence and detection rules. A deterministic pipeline builds the cases; a locally-hosted
 LLM assists with investigation and threat hunting without ever acting on its own. Documentation
 is written in Spanish.*
 
----
-
-## Por qué
+## Por qué este proyecto
 
 Los compromisos que sufre una empresa pequeña no suelen empezar con un ataque dirigido, sino con
-un servidor expuesto que alguien encuentra escaneando internet. Esa actividad está poco
-documentada desde la perspectiva de quien la recibe.
+un servidor expuesto que alguien encuentra escaneando internet de forma indiscriminada. Esa
+actividad es abundante y está poco documentada desde la perspectiva de quien la recibe. Leer
+informes sobre ella no es lo mismo que verla llegar.
 
-Y procesar registros escritos por un atacante con un modelo de lenguaje convierte al propio
-modelo en superficie de ataque. Aquí eso se trata como parte del proyecto, no como una nota al
-margen.
+Hay un segundo motivo. Procesar registros escritos por un atacante con un modelo de lenguaje
+convierte al propio modelo en superficie de ataque, y ese problema todavía tiene poca
+documentación pública con datos propios.
 
 | Disciplina | Qué practico |
 |---|---|
@@ -32,6 +29,28 @@ margen.
 | Inteligencia de amenazas | Requisitos antes de recolectar, agrupación por comportamiento, indicadores con ciclo de vida |
 | Análisis forense | Reconstruir qué ocurrió en cada sesión; los informes del modelo son el borrador, la revisión es la verificación |
 | Ingeniería de ciberseguridad | Infraestructura expuesta: segmentación, control de salida, infraestructura como código |
+
+## Qué voy a hacer
+
+1. **Definir** los requisitos de inteligencia antes de recolectar un solo evento.
+2. **Construir** el laboratorio completo en local, replicando el servidor de producción.
+3. **Desplegar** cuatro honeypots coherentes con una pyme ficticia en un servidor expuesto.
+4. **Procesar** lo capturado con un pipeline determinista y un modelo local que solo recomienda.
+5. **Publicar** informes de campaña, reglas de detección validadas y registro de threat hunting.
+
+## Arquitectura
+
+Cuatro zonas con niveles de confianza distintos. Los datos fluyen en una sola dirección, de la
+menos confiable a la más protegida, y cada frontera impone sus propias restricciones.
+
+El **servidor de sensores** tiene IP pública y se asume comprometible: es la máquina que se
+quiere que ataquen. Sus eventos viajan por un túnel WireGuard que se inicia desde casa, nunca al
+revés, y que solo deja alcanzable un puerto del **equipo de recolección**, donde Wazuh almacena,
+Vector normaliza y n8n construye los casos. El **equipo de análisis** ejecuta el modelo bajo
+demanda y no tiene ruta desde la zona expuesta. Nada se publica sin validación automática y
+revisión humana.
+
+![Arquitectura](docs/02-arquitectura/arquitectura.svg)
 
 ## Sensores
 
@@ -97,35 +116,35 @@ dirección de un señuelo permite identificarlo, evitarlo o atacarlo de forma di
 
 ## Fases
 
-| Fase | Contenido | Documentación | 
+| Fase | Contenido | Documentación | Estado |
 |---|---|---|---|
 | 0 | Gobierno, requisitos y modelo de amenazas | `docs/01-concepto/` | 
-| 1 | Laboratorio espejo e infraestructura base | `docs/02-arquitectura/` |
-| 2 | Sensores, cebos y pruebas de realismo | `docs/02-arquitectura/` |
+| 1 | Laboratorio espejo e infraestructura base | `docs/02-arquitectura/` | 
+| 2 | Sensores, cebos y pruebas de realismo | `docs/02-arquitectura/` | 
 | 3 | Pipeline determinista y línea base | `docs/04-metodologia/` | 
-| 4 | Capa de IA, evaluación y pruebas adversarias | `docs/05-ai-security/` | 
+| 4 | Capa de IA, evaluación y pruebas adversarias | `docs/05-ai-security/` |
 | 5 | Productos y detección como código | `docs/07-detecciones/` | 
-| 6 | Despliegue escalonado en el servidor | `docs/02-arquitectura/` | 
-| 7 | Periodo de observación y primer informe | `docs/06-productos/` | 
+| 6 | Despliegue escalonado en el servidor | `docs/02-arquitectura/` |
+| 7 | Periodo de observación y primer informe | `docs/06-productos/` |
 
 ## Estructura del repositorio
 
 ```
 .
 ├── docs/
-│   ├── 01-concepto/       
-│   ├── 02-arquitectura/   
-│   ├── 03-decisiones/     
-│   ├── 04-metodologia/   
-│   ├── 05-ai-security/    
-│   ├── 06-productos/      
-│   ├── 07-detecciones/    
-│   ├── 08-hallazgos/     
-│   └── diario.md         
-├── infra/                
-├── pipeline/             
-├── rules/                 
-└── tests/               
+│   ├── 01-concepto/        Problema, requisitos de inteligencia, alcance, política de datos
+│   ├── 02-arquitectura/    Componentes, flujo de datos, red y fronteras
+│   ├── 03-decisiones/      Registro de decisiones: qué se eligió y qué se descartó
+│   ├── 04-metodologia/     Agrupación, priorización, validación y métricas
+│   ├── 05-ai-security/     El agente como superficie de ataque
+│   ├── 06-productos/       Informes de campaña y registro de threat hunting
+│   ├── 07-detecciones/     Contexto de las reglas de detección
+│   ├── 08-hallazgos/       Qué se aprendió, incluido lo que no funcionó
+│   └── diario.md           Diario de laboratorio
+├── infra/                  Ansible, Compose, nftables, WireGuard
+├── pipeline/               Flujos de n8n, esquemas, guardarraíles y consultas
+├── rules/                  Reglas Sigma y capas de ATT&CK Navigator
+└── tests/                  Egress, realismo, guardarraíles y pruebas adversarias
 ```
 
 ## Autor
