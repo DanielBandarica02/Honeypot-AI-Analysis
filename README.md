@@ -117,13 +117,13 @@ dirección de un señuelo permite identificarlo, evitarlo o atacarlo de forma di
 ## Fases
 
 | Fase | Contenido | Documentación |
-|---|----|----|----|
-| 0 | Gobierno, requisitos y modelo de amenazas | `docs/01-concepto/` | 
-| 1 | Laboratorio espejo e infraestructura base | `docs/02-arquitectura/` | 
-| 2 | Sensores, cebos y pruebas de realismo | `docs/02-arquitectura/` | 
-| 3 | Pipeline determinista y línea base | `docs/04-metodologia/` | 
+|---|---|---|
+| 0 | Gobierno, requisitos y modelo de amenazas | `docs/01-concepto/` |
+| 1 | Laboratorio espejo e infraestructura base | `docs/02-arquitectura/` |
+| 2 | Sensores, cebos y pruebas de realismo | `docs/02-arquitectura/` |
+| 3 | Pipeline determinista y línea base | `docs/04-metodologia/` |
 | 4 | Capa de IA, evaluación y pruebas adversarias | `docs/05-ai-security/` |
-| 5 | Productos y detección como código | `docs/07-detecciones/` | 
+| 5 | Productos y detección como código | `docs/07-detecciones/` |
 | 6 | Despliegue escalonado en el servidor | `docs/02-arquitectura/` |
 | 7 | Periodo de observación y primer informe | `docs/06-productos/` |
 
