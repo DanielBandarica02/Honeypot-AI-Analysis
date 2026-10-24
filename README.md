@@ -1,7 +1,11 @@
-# Honeypot-AI-Analysis
+# Honeypot-AI-Analysis — De honeypots expuestos a inteligencia de amenazas
 
-Laboratorio de inteligencia de amenazas sobre honeypots expuestos a internet, con triaje
-asistido por un modelo de lenguaje local.
+> Un laboratorio de inteligencia de amenazas construido desde cero sobre honeypots expuestos a
+> internet, para capturar actividad real de atacantes oportunistas y convertirla en informes de
+> campaña y reglas de detección. Los sensores simulan el servidor de una pyme, un pipeline
+> determinista construye los casos y un modelo de lenguaje local asiste en la investigación y en
+> el threat hunting sin ejecutar ninguna acción. Como la entrada la escribe el adversario, el
+> propio agente se trata como superficie de ataque y se somete a pruebas adversarias continuas.
 
 ![Arquitectura](docs/02-arquitectura/arquitectura.svg)
 
@@ -93,35 +97,35 @@ dirección de un señuelo permite identificarlo, evitarlo o atacarlo de forma di
 
 ## Fases
 
-| Fase | Contenido | Documentación | Estado |
+| Fase | Contenido | Documentación | 
 |---|---|---|---|
-| 0 | Gobierno, requisitos y modelo de amenazas | `docs/01-concepto/` | En curso |
-| 1 | Laboratorio espejo e infraestructura base | `docs/02-arquitectura/` | Pendiente |
-| 2 | Sensores, cebos y pruebas de realismo | `docs/02-arquitectura/` | Pendiente |
-| 3 | Pipeline determinista y línea base | `docs/04-metodologia/` | Pendiente |
-| 4 | Capa de IA, evaluación y pruebas adversarias | `docs/05-ai-security/` | Pendiente |
-| 5 | Productos y detección como código | `docs/07-detecciones/` | Pendiente |
-| 6 | Despliegue escalonado en el servidor | `docs/02-arquitectura/` | Pendiente |
-| 7 | Periodo de observación y primer informe | `docs/06-productos/` | Pendiente |
+| 0 | Gobierno, requisitos y modelo de amenazas | `docs/01-concepto/` | 
+| 1 | Laboratorio espejo e infraestructura base | `docs/02-arquitectura/` |
+| 2 | Sensores, cebos y pruebas de realismo | `docs/02-arquitectura/` |
+| 3 | Pipeline determinista y línea base | `docs/04-metodologia/` | 
+| 4 | Capa de IA, evaluación y pruebas adversarias | `docs/05-ai-security/` | 
+| 5 | Productos y detección como código | `docs/07-detecciones/` | 
+| 6 | Despliegue escalonado en el servidor | `docs/02-arquitectura/` | 
+| 7 | Periodo de observación y primer informe | `docs/06-productos/` | 
 
 ## Estructura del repositorio
 
 ```
 .
 ├── docs/
-│   ├── 01-concepto/        
+│   ├── 01-concepto/       
 │   ├── 02-arquitectura/   
 │   ├── 03-decisiones/     
-│   ├── 04-metodologia/     
-│   ├── 05-ai-security/     
-│   ├── 06-productos/       
+│   ├── 04-metodologia/   
+│   ├── 05-ai-security/    
+│   ├── 06-productos/      
 │   ├── 07-detecciones/    
-│   ├── 08-hallazgos/      
+│   ├── 08-hallazgos/     
 │   └── diario.md         
-├── infra/               
-├── pipeline/              
+├── infra/                
+├── pipeline/             
 ├── rules/                 
-└── tests/                 
+└── tests/               
 ```
 
 ## Autor
