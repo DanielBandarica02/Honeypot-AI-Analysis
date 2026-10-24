@@ -30,5 +30,3 @@ reales de terceros.
 Todos los datos del perfil son sintéticos. El procedimiento de verificación de que no coinciden con
 entidades o personas reales está en
 [`../03-decisiones/ADR-0003-persona-ficticia.md`](../03-decisiones/ADR-0003-persona-ficticia.md).
-
-> Esta política no constituye asesoramiento jurídico.
