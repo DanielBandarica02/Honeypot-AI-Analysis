@@ -117,7 +117,7 @@ dirección de un señuelo permite identificarlo, evitarlo o atacarlo de forma di
 ## Fases
 
 | Fase | Contenido | Documentación |
-|---|---|---|---|
+|---|----|----|----|
 | 0 | Gobierno, requisitos y modelo de amenazas | `docs/01-concepto/` | 
 | 1 | Laboratorio espejo e infraestructura base | `docs/02-arquitectura/` | 
 | 2 | Sensores, cebos y pruebas de realismo | `docs/02-arquitectura/` | 
@@ -130,7 +130,6 @@ dirección de un señuelo permite identificarlo, evitarlo o atacarlo de forma di
 ## Estructura del repositorio
 
 ```
-.
 ├── docs/
 │   ├── 01-concepto/                  <======   Working On
 │   ├── 02-arquitectura/   
