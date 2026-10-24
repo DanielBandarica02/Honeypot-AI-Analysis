@@ -10,7 +10,7 @@ invita a conclusiones que los datos no sostienen.
 - Mecanismos de persistencia intentados
 - Peticiones de explotación contra aplicaciones web conocidas
 - Cadenas de abuso de servicios de datos expuestos
-- Metadatos de las cargas descargadas
+- Comandos de ejecución intentados, y la carga descargada con su hash
 - Reutilización de credenciales entre servicios, mediante cebos sembrados
 
 ## Qué no captura
@@ -19,9 +19,21 @@ invita a conclusiones que los datos no sostienen.
 |---|---|
 | Ataques dirigidos y APTs | Un señuelo sin valor aparente no atrae operaciones dirigidas |
 | Movimiento lateral en entornos Windows o Active Directory | Fuera del perfil desplegado |
-| Comportamiento del malware en ejecución | Los honeypots son de interacción media: no se ejecuta nada |
+| Comportamiento del malware en ejecución | Los honeypots emulan el protocolo: los comandos se registran y las cargas se capturan, pero no llegan a ejecutarse. No se observa la comunicación con el servidor de mando, el cifrado de ficheros ni la propagación |
 | Operadores humanos cuidadosos | Un analista atento puede identificar el entorno y retirarse |
 | Tráfico contra servicios no desplegados | La superficie expuesta condiciona por completo lo observado |
+
+## Qué significa «no se ejecuta»
+
+El atacante sí intenta ejecutar. Lo que no ocurre es que su código llegue a correr en el servidor.
+
+Ante una secuencia como descargar un fichero, darle permisos y lanzarlo, el sensor registra los
+tres comandos en orden, guarda el fichero descargado con su hash y responde como si se hubiera
+ejecutado. No hay ningún proceso corriendo: el sensor emula una shell.
+
+La consecuencia es que se captura la intención completa —qué quiso hacer, con qué herramienta y de
+dónde la trajo— y el artefacto, pero no su comportamiento en ejecución. Eso basta para los
+requisitos PIR-1 a PIR-4, y es precisamente lo que mantiene el servidor bajo control.
 
 ## Sesgos conocidos
 
