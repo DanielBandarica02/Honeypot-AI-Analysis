@@ -132,19 +132,19 @@ dirección de un señuelo permite identificarlo, evitarlo o atacarlo de forma di
 ```
 .
 ├── docs/
-│   ├── 01-concepto/        Problema, requisitos de inteligencia, alcance, política de datos
-│   ├── 02-arquitectura/    Componentes, flujo de datos, red y fronteras
-│   ├── 03-decisiones/      Registro de decisiones: qué se eligió y qué se descartó
-│   ├── 04-metodologia/     Agrupación, priorización, validación y métricas
-│   ├── 05-ai-security/     El agente como superficie de ataque
-│   ├── 06-productos/       Informes de campaña y registro de threat hunting
-│   ├── 07-detecciones/     Contexto de las reglas de detección
-│   ├── 08-hallazgos/       Qué se aprendió, incluido lo que no funcionó
-│   └── diario.md           Diario de laboratorio
-├── infra/                  Ansible, Compose, nftables, WireGuard
-├── pipeline/               Flujos de n8n, esquemas, guardarraíles y consultas
-├── rules/                  Reglas Sigma y capas de ATT&CK Navigator
-└── tests/                  Egress, realismo, guardarraíles y pruebas adversarias
+│   ├── 01-concepto/       
+│   ├── 02-arquitectura/   
+│   ├── 03-decisiones/     
+│   ├── 04-metodologia/     
+│   ├── 05-ai-security/    
+│   ├── 06-productos/       
+│   ├── 07-detecciones/   
+│   ├── 08-hallazgos/       
+│   └── diario.md          
+├── infra/                  
+├── pipeline/               
+├── rules/                  
+└── tests/                 
 ```
 
 ## Autor
