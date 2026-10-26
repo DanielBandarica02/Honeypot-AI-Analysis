@@ -2,8 +2,7 @@
 
 ## El problema
 
-Un honeypot puede emular un servicio o exponer un sistema real. La segunda opción captura más
-—incluido el comportamiento del malware en ejecución— pero entrega una máquina real al atacante.
+Un honeypot puede emular un servicio o exponer un sistema real. La segunda opción captura más, incluido el comportamiento del malware en ejecución, pero entrega una máquina real al atacante.
 
 ## Qué se decidió
 
