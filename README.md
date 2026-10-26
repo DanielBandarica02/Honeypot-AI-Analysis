@@ -112,7 +112,6 @@ dirección de un señuelo permite identificarlo, evitarlo o atacarlo de forma di
 | Análisis | Modelo de lenguaje local sobre llama.cpp |
 | Detección | Sigma, MITRE ATT&CK, ATT&CK Navigator |
 | Infraestructura | Docker Compose, Ansible, cloud-init |
-| Integración continua | GitHub Actions |
 
 ## Fases
 
