@@ -2,8 +2,8 @@
 
 ## El problema
 
-Exponer servicios dispares en una misma dirección —SSH, un autómata industrial, carpetas
-compartidas de Windows y un directorio corporativo— es una combinación que ninguna empresa real
+Exponer servicios dispares en una misma dirección SSH, un autómata industrial, carpetas
+compartidas de Windows y un directorio corporativo, es una combinación que ninguna empresa real
 presenta, y que los buscadores de servicios expuestos identifican como señuelo.
 
 Además, la credibilidad de un entorno no depende de sus recursos sino de su coherencia: versiones
