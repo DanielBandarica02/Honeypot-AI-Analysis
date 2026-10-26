@@ -50,7 +50,7 @@ Vector normaliza y n8n construye los casos. El **equipo de análisis** ejecuta e
 demanda y no tiene ruta desde la zona expuesta. Nada se publica sin validación automática y
 revisión humana.
 
-![Arquitectura](docs/02-arquitectura/arquitectura.svg)
+![Arquitectura](docs/02-arquitectura/00-arquitectura.svg)
 
 ## Sensores
 
