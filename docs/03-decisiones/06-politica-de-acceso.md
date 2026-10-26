@@ -103,6 +103,3 @@ informes.
 | Sesiones con acceso que ejecutan comandos | Más del 50 % | El entorno resulta poco creíble una vez dentro |
 | Sesiones que prueban alta entropía y se desconectan | Vigilar tendencia | Si crece, están identificando el señuelo |
 | Credenciales válidas que nunca se prueban | Revisar cada mes | No reflejan lo que circula |
-
-Cada ajuste se anota en el diario con la fecha, para analizar por separado los datos anteriores y
-posteriores.
