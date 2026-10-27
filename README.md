@@ -130,9 +130,19 @@ dirección de un señuelo permite identificarlo, evitarlo o atacarlo de forma di
 
 ```
 ├── docs/
-│   ├── 01-concepto/                  <======   Working On
+│   ├── 01-concepto/
+│   │   ├── 00-introduccion.md
+│   │   ├── 01-pirs.md
+│   │   ├── 02-alcance.md
+│   │   └── 03-politica-de-datos.md                  
 │   ├── 02-arquitectura/   
-│   ├── 03-decisiones/     
+│   ├── 03-decisiones/
+│   │   ├── 00-interaccion-media.md
+│   │   ├── 01-sin-atribucion.md
+│   │   ├── 02-perfil-unico.md
+│   │   ├── 03-ia-recomienda.md
+│   │   ├── 04-guardarrailes.md
+│   │   └── 05-politica-de-acceso.md 
 │   ├── 04-metodologia/     
 │   ├── 05-ai-security/    
 │   ├── 06-productos/       
