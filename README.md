@@ -1,4 +1,4 @@
-# Honeypot-AI-Analysis — De honeypots expuestos a inteligencia de amenazas
+# Honeypot AI Analysis — De honeypots expuestos a inteligencia de amenazas
 
 > Un laboratorio de inteligencia de amenazas construido desde cero sobre honeypots expuestos a
 > internet, para capturar actividad real de atacantes oportunistas y convertirla en informes de
