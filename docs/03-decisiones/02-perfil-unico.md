@@ -22,9 +22,9 @@ a tocar desde que se instalaron. De ahí sale la mayoría de los compromisos rea
 
 ## Cómo se gestiona el perfil
 
-Toda la identidad vive en un único fichero, `infra/persona.yml`, del que Ansible deriva banners,
-mensajes de bienvenida, contenido web, ficheros cebo y credenciales válidas. Las pruebas de
-realismo validan contra ese mismo fichero.
+Toda la identidad vive en un único fichero de perfil, del que Ansible deriva banners, mensajes de
+bienvenida, contenido web, ficheros cebo y credenciales válidas. Las pruebas de realismo validan
+contra ese mismo fichero.
 
 | Bloque | Qué define |
 |---|---|
@@ -42,8 +42,8 @@ Ni el fichero real ni un ejemplo con su estructura rellena. Publicarlo revelarí
 vulnerabilidad se emula, dónde están los cebos y qué usuarios existen, lo que permitiría confirmar
 el servidor como señuelo sin necesidad de atacarlo.
 
-El fichero vive en el equipo de administración y en el servidor, y está excluido en `.gitignore`
-para evitar subirlo por descuido.
+El fichero vive en el equipo de administración y en el servidor, y está excluido del control de
+versiones para evitar subirlo por descuido.
 
 ## Cómo se verifica que los datos son ficticios
 
@@ -60,9 +60,6 @@ para evitar subirlo por descuido.
 
 **Perfil industrial.** Más llamativo, pero incompatible con el resto de servicios en la misma
 dirección. Queda como segundo perfil en otra dirección, si hay presupuesto.
-
-**Publicar el perfil como ejemplo.** Habría facilitado reproducir el laboratorio, pero entrega la
-huella completa del señuelo a cualquiera que encuentre el repositorio.
 
 ## Qué implica
 
