@@ -1,0 +1,111 @@
+# Identidad de la empresa ficticia.
+
+empresa:
+  nombre: "Cobalia Digital"
+  sector: "agencia de marketing y desarrollo web"
+  ciudad: "Barcelona"
+  dominio: "cobalia.es"        
+  empleados: 8
+  fundacion: 2017
+
+sistema:
+  distribucion: "Ubuntu"
+  version: "22.04.3 LTS"
+  nombre_codigo: "jammy"
+  kernel: "5.15.0-91-generic"
+  arquitectura: "x86_64"
+  hostname: "web01"
+  fqdn: "web01.cobalia.es"
+  zona_horaria: "Europe/Madrid"
+
+servicios:
+  ssh:
+    puerto: 22
+    banner: "SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.6"
+  web:
+    puerto: 80
+    servidor: "Apache"
+    version: "2.4.52"
+    php: "8.1.2"
+    gestor_contenidos: "WordPress"
+    version_gestor: "7.1.1"     
+
+    plugins:
+      - nombre: "wp-file-manager"
+        version: "6.8"
+        cve: "CVE-2020-25213"
+        descripcion: "subida de ficheros sin autenticación"
+        ruta: "/wp-content/plugins/wp-file-manager/lib/php/connector.minimal.php"
+      - nombre: "contact-form-7"
+        version: "5.9.8"
+        cve: ""                 
+      - nombre: "yoast-seo"
+        version: "22.6"
+        cve: ""
+
+    subida_emulada:
+      - "/wp-content/uploads/"
+      - "/wp-content/plugins/wp-file-manager/lib/files/"
+  mysql:
+    puerto: 3306
+    version: "8.0.35"
+  redis:
+    puerto: 6379
+    version: "6.0.16"
+  ftp:
+    puerto: 21
+    servidor: "vsftpd"
+    version: "3.0.5"
+
+personas:
+  - nombre: "Marc Oliva"
+    usuario: "moliva"
+    rol: "administrador de sistemas"
+    correo: "moliva@cobalia.es"
+  - nombre: "Nuria Sanz"
+    usuario: "nsanz"
+    rol: "desarrollo"
+    correo: "nsanz@cobalia.es"
+  - nombre: "Pau Ferrer"
+    usuario: "pferrer"
+    rol: "diseño"
+    correo: "pferrer@cobalia.es"
+
+cuentas_servicio:
+  - usuario: "deploy"
+    descripcion: "despliegue de sitios de clientes"
+  - usuario: "backup"
+    descripcion: "copias programadas al FTP"
+
+clientes:
+  - nombre: "Dental Arvensis"
+    sector: "clínica dental"
+    sitio: "arvensis"
+  - nombre: "Forn Vilarasa"
+    sector: "panadería"
+    sitio: "vilarasa"
+  - nombre: "Talleres Montbrió"
+    sector: "automoción"
+    sitio: "montbrio"
+
+credenciales_validas:
+  comunes: []                   
+  del_perfil: []                
+
+honeytokens:
+  - id: "wp-config-mysql"
+    ubicacion: "web:/var/www/html/wp-config.php"
+    tipo: "credencial interna"
+    valida_en: "mysql"
+  - id: "env-deploy"
+    ubicacion: "cowrie:/home/deploy/sitios/arvensis/.env"
+    tipo: "credencial interna"
+    valida_en: "ninguno"
+  - id: "backup-canario"
+    ubicacion: "ftp:/backups/clientes_2026.zip"
+    tipo: "canarytoken"
+    valida_en: "externo"
+  - id: "aws-canario"
+    ubicacion: "cowrie:/home/moliva/.aws/credentials"
+    tipo: "canarytoken"
+    valida_en: "externo"
