@@ -27,6 +27,4 @@ reales de terceros.
 
 ## Datos de la empresa ficticia
 
-Todos los datos del perfil son sintéticos. El procedimiento de verificación de que no coinciden con
-entidades o personas reales está en
-[`../03-decisiones/ADR-0003-persona-ficticia.md`](../03-decisiones/ADR-0003-persona-ficticia.md).
+Todos los datos del perfil son sintéticos.
